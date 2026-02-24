@@ -14,7 +14,14 @@ class Song:
         Song.add_to_artists(self.artist)
         Song.add_to_genre_count(self.genre)
         Song.add_to_artist_count(self.artist)
-        
+    
+    @classmethod
+    def reset(cls):
+        cls.count = 0
+        cls.genres = []
+        cls.artists = []
+        cls.genre_count = {}
+        cls.artist_count = {}   
     @classmethod
     def add_song_to_count(cls):
         #increment total song count
@@ -56,9 +63,9 @@ class Song:
                 
 
 # Create songs
-song1 = Song("Halo", "Beyonce", "Pop")
-song2 = Song("Crazy in Love", "Beyonce", "Pop")
-song3 = Song("99 Problems", "Jay-Z", "Rap")
+# song1 = Song("Halo", "Beyonce", "Pop")
+# song2 = Song("Crazy in Love", "Beyonce", "Pop")
+# song3 = Song("99 Problems", "Jay-Z", "Rap")
 
-# View global stats
-print(Song.get_all_song_info())
+# # # View global stats
+# print(Song.get_all_song_info())
